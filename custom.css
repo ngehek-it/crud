@@ -1,0 +1,19 @@
+body {
+  background: #3f768b;
+}
+.card {
+  background-color: #ffffffbf;
+}
+.rounded-mine {
+  border-radius: 20px;
+}
+
+.text-mine {
+  color: #3f768b;
+}
+
+.btn-mine {
+  color: #fff;
+  background-color: #305b6bbf;
+  border-color: #305b6bbf;
+}
