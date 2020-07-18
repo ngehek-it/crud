@@ -2,10 +2,19 @@
 if (!empty($_POST['name']) && !empty($_POST['address'])) {
 	include('connection.php');
 	$simpan = $conn->prepare("INSERT INTO warga (nama, alamat) VALUES (:name, :address)");
+
+	# Rentan XSS
+	// $simpan->execute([
+	// 	':name' => $_POST['name'],
+	// 	':address' => $_POST['address']
+	// ]);
+
+	# Patch XSS
 	$simpan->execute([
-		':name' => $_POST['name'],
-		':address' => $_POST['address']
+		':name' => htmlspecialchars($_POST['name']),
+		':address' => htmlspecialchars($_POST['address'])
 	]);
+
 	if ($simpan) {
 		header('Location: index.php');
 	}

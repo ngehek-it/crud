@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include('connection.php');
 $listWarga = $conn->prepare("SELECT * FROM warga");
@@ -18,7 +18,7 @@ $results = $listWarga->fetchAll();
   <body>
     <div class="container">
       <div class="row vh-100 justify-content-center align-content-center">
-        <div class="col-7">
+        <div class="col-8">
           <div class="card rounded-mine">
             <div class="card-body p-5">
               <div class="card-title d-flex justify-content-between">
